@@ -3,7 +3,7 @@ function names(){
 	var btn = document.createElement("BUTTON");
 	  
 	console.log("joe");
-	$.getJSON("http://localhost:8081/pandanew/restservices/gebruikers", function(data) {
+	$.getJSON("/restservices/gebruikers", function(data) {
 		$(data).each(function( index_user , value_user ) {
 			console.log(value_user.lasttime);
 			$('#names').append('<tr id="rows'+index_user+'">' +
@@ -22,7 +22,7 @@ function names(){
 function reset(name){
 	console.log(name);
 		
-		var uri = "http://localhost:8081/pandanew/restservices/gebruikers/" + name;
+		var uri = "/restservices/gebruikers/" + name;
 		
 		$.ajax(uri, {
 			type: "put",
